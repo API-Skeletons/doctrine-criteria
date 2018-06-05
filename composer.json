@@ -10,7 +10,7 @@
     ],
     "homepage": "https://api-skeletons.com",
     "support": {
-        "gitter": "https://gitter.im/API-Skeletons/open-source",
+        "gitter": "https://gitter.im/API-Skeletons/open-source"
     },
     "extra": {
         "zf": {
