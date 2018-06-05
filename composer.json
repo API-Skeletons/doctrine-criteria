@@ -1,0 +1,63 @@
+{
+    "name": "api-skeletons/zf-doctrine-criteria",
+    "description": "Doctrine Criteria from Array Parameters",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "doctrine",
+        "filter",
+        "criteria",
+        "orm"
+    ],
+    "homepage": "https://api-skeletons.com",
+    "support": {
+        "gitter": "https://gitter.im/API-Skeletons/open-source",
+    },
+    "extra": {
+        "zf": {
+            "module": [
+                "ZF\\Doctrine\\Criteria"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "doctrine/doctrine-module": "^1.2",
+        "zendframework/zend-hydrator": "^1.1 || ^2.2.1",
+        "zendframework/zend-modulemanager": "^2.7.2",
+        "zendframework/zend-mvc": "^2.7.13 || ^3.0.2",
+        "zendframework/zend-servicemanager": "^2.7.6 || ^3.1.1",
+        "zfcampus/zf-api-problem": "^1.2.2",
+        "zfcampus/zf-apigility-doctrine": "^2.1",
+        "zfcampus/zf-hal": "^1.4.2"
+    },
+    "require-dev": {
+        "doctrine/doctrine-mongo-odm-module": "^1.0",
+        "doctrine/doctrine-orm-module": "^1.1",
+        "dprevite/lint": "dev-master",
+        "api-skeletons/coding-standard": "^1.0",
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZF\\Doctrine\\Criteria\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZFTest\\Doctrine\\Criteria\\": "test/"
+        }
+    },
+    "scripts": {
+        "ci-check": [
+            "@lint",
+            "@phpcs",
+            "@test",
+            "@phpstan"
+        ],
+        "lint": "lint src/",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyze -c phpstan.neon --level=7 src/",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    }
+}
