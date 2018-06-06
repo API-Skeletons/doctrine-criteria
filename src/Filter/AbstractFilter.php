@@ -17,7 +17,7 @@ abstract class AbstractFilter implements FilterInterface
         $this->setFilterManager($params[0]);
     }
 
-    public function setFilterManager(ORMFilterManager $filterManager)
+    public function setFilterManager(FilterManager $filterManager)
     {
         $this->filterManager = $filterManager;
         return $this;

@@ -7,6 +7,7 @@ return [
         'factories' => [
             Filter\Service\FilterManager::class => Filter\Service\FilterManagerFactory::class,
             OrderBy\Service\OrderByManager::class => OrderBy\Service\OrderByManagerFactory::class,
+            Builder::class => BuilderFactory::class,
         ],
     ],
 ];

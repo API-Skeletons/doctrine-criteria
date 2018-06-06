@@ -5,7 +5,7 @@ namespace ZF\Doctrine\Criteria;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\Listener\ServiceListener;
-use Zend\ModuleManager\ModuleManager;
+use Zend\ModuleManager\ModuleManagerInterface;
 
 class Module implements
     ConfigProviderInterface,
@@ -16,14 +16,14 @@ class Module implements
         return include __DIR__ . '/../config/module.config.php';
     }
 
-    public function init(ModuleManager $moduleManager)
+    public function init(ModuleManagerInterface $manager)
     {
-        $serviceManager  = $moduleManager->getEvent()->getParam('ServiceManager');
+        $serviceManager  = $manager->getEvent()->getParam('ServiceManager');
         $serviceListener = $serviceManager->get('ServiceListener');
 
         $serviceListener->addServiceManager(
             Filter\Service\FilterManager::class,
-            'zf-doctrine-critria-filter',
+            'zf-doctrine-criteria-filter',
             Filter\FilterInterface::class,
             'getDoctrineCriteriaFilterConfig'
         );
