@@ -3,6 +3,7 @@
 namespace ZF\Doctrine\Criteria\Filter;
 
 use DateTime;
+use DateTimeZone;
 use Doctrine\Common\Collections\Criteria;
 use ZF\Doctrine\Criteria\Filter\Service\FilterManager;
 
@@ -74,6 +75,12 @@ abstract class AbstractFilter implements FilterInterface
                         $format = 'Y-m-d H:i:s';
                     }
                     $value = DateTime::createFromFormat($format, $value);
+
+                    // Convert +00:00 timezone_type 1 to timezone_type 3 for UTC
+                    $utc = new DateTimeZone('UTC');
+                    if (! $utc->getOffset($value)) {
+                        $value->setTimeZone($utc);
+                    }
                 }
                 break;
             default:

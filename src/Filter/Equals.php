@@ -18,11 +18,7 @@ class Equals extends AbstractFilter
             $queryType = 'andWhere';
         }
 
-        $format = null;
-        if (isset($option['format'])) {
-            $format = $option['format'];
-        }
-
+        $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
         $value = $this->typeCastField($metadata, $option['field'], $option['value'], $format);
 
         $criteria->$queryType($criteria->expr()->eq($option['field'], $value));
