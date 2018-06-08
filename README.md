@@ -1,7 +1,7 @@
 ZF Doctrine Criteria
 ====================
 
-[![Build Status](https://travis-ci.org/api-skeletons/zf-doctrine-criteria.svg?branch=master)](https://travis-ci.org/api-skeletons/zf-doctrine-criteria)
+[![Build Status](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria.svg?branch=master)](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria)
 [![Coverage Status](https://coveralls.io/repos/github/api-skeletons/zf-doctrine-criteria/badge.svg?branch=master)](https://coveralls.io/github/api-skeletons/zf-doctrine-criteria?branch=master)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
 [![Total Downloads](https://poser.pugx.org/api-skeletons/zf-doctrine-criteria/downloads)](https://packagist.org/packages/api-skeletons/zf-doctrine-criteria)
