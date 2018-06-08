@@ -10,7 +10,7 @@ use DbTest\Entity\Test;
 use ZF\Doctrine\Criteria\Filter\Service\FilterManager;
 use DateTime;
 
-class FilterArrayTest extends AbstractTest
+class FilterTest extends AbstractTest
 {
     public function testContains()
     {
@@ -1139,7 +1139,9 @@ class FilterArrayTest extends AbstractTest
         $this->assertEquals(5, $filteredCollection->count());
     }
 
-/*
+/**
+ * Date fields are not handled by Criteria!!!
+ *
     public function testEqualsDate()
     {
         $container = $this->getApplication()->getServiceManager();
@@ -1166,17 +1168,4 @@ class FilterArrayTest extends AbstractTest
         $this->assertEquals(1, $filteredCollection->count());
     }
 */
-    public function testGetFilterManager()
-    {
-        $container = $this->getApplication()->getServiceManager();
-        $filterManager = $container->get(FilterManager::class);
-
-        $eq = $filterManager->get('eq', [$filterManager]);
-
-        $this->assertEquals($eq->getFilterManager(), $filterManager);
-    }
-
-    public function testInvalidFilter()
-    {
-    }
 }

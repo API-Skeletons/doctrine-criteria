@@ -2,12 +2,14 @@
 
 namespace ZF\Doctrine\Criteria\OrderBy;
 
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Common\Collections\Criteria;
 use ZF\Doctrine\Criteria\OrderBy\OrderByInterface;
 use ZF\Doctrine\Criteria\OrderBy\Service\OrderByManager;
 
 abstract class AbstractOrderBy implements OrderByInterface
 {
-    abstract public function orderBy($queryBuilder, $metadata, $option);
+    abstract public function orderBy(Criteria $criteria, ClassMetadata $metadata, array $option);
 
     protected $orderByManager;
 

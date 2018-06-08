@@ -42,16 +42,6 @@ abstract class AbstractTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpCo
                 ->setTestBoolean(true)
                 ->setTestArray([11, 12, 13]),
             (new Test())
-                ->setTestString('pqrst')
-                ->setTestInteger(4000)
-                ->setTestBigint(12345678)
-                ->setTestDateTime(new DateTime())
-                ->setTestDate(new DateTime())
-                ->setTestDecimal(12.345)
-                ->setTestFloat(54.321)
-                ->setTestBoolean(false)
-                ->setTestArray([5, 15, 16]),
-            (new Test())
                 ->setTestString('uvwxy')
                 ->setTestInteger(5000)
                 ->setTestBigint(123456789)
@@ -61,6 +51,16 @@ abstract class AbstractTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpCo
                 ->setTestFloat(54.321)
                 ->setTestBoolean(false)
                 ->setTestArray([5, 18, 19]),
+            (new Test())
+                ->setTestString('pqrst')
+                ->setTestInteger(4000)
+                ->setTestBigint(12345678)
+                ->setTestDateTime(new DateTime())
+                ->setTestDate(new DateTime())
+                ->setTestDecimal(12.345)
+                ->setTestFloat(54.321)
+                ->setTestBoolean(false)
+                ->setTestArray([5, 15, 16]),
         ]);
     }
 

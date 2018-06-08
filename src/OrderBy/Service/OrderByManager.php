@@ -2,10 +2,11 @@
 
 namespace ZF\Doctrine\Criteria\OrderBy\Service;
 
-use Doctrine\ORM\QueryBuilder;
 use RuntimeException;
 use Zend\ServiceManager\AbstractPluginManager;
 use Zend\ServiceManager\Exception;
+use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use ZF\Doctrine\Criteria\OrderBy\OrderByInterface;
 
 class OrderByManager extends AbstractPluginManager
@@ -15,16 +16,22 @@ class OrderByManager extends AbstractPluginManager
      */
     protected $instanceOf = OrderByInterface::class;
 
-    public function orderBy(QueryBuilder $queryBuilder, $metadata, $orderBy)
+    public function orderBy(Criteria $criteria, ClassMetadata $metadata, array $orderBy)
     {
+        $orderings = [];
         foreach ($orderBy as $option) {
             if (empty($option['type'])) {
                 throw new RuntimeException('Array element "type" is required for all orderby directives');
             }
 
             $orderByHandler = $this->get(strtolower($option['type']), [$this]);
-            $orderByHandler->orderBy($queryBuilder, $metadata, $option);
+            $ordering = $orderByHandler->orderBy($criteria, $metadata, $option);
+            foreach ($ordering as $field => $direction) {
+                $orderings[$field] = $direction;
+            }
         }
+
+        $criteria->orderBy($orderings);
     }
 
     /**
@@ -35,6 +42,7 @@ class OrderByManager extends AbstractPluginManager
      * @param mixed $instance
      * @return void
      * @throws Exception\InvalidServiceException
+     * @codeCoverageIgnore
      */
     public function validate($instance)
     {
@@ -56,6 +64,7 @@ class OrderByManager extends AbstractPluginManager
      * @param mixed $instance
      * @return void
      * @throws Exception\InvalidArgumentException
+     * @codeCoverageIgnore
      */
     public function validatePlugin($instance)
     {

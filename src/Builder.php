@@ -20,7 +20,7 @@ class Builder
         $criteria = Criteria::create();
 
         $this->filterManager->filter($criteria, $metadata, $filters);
-#        $this->orderByManager->orderBy($criteria, $metadata, $orderBy);
+        $this->orderByManager->orderBy($criteria, $metadata, $orderBy);
 
         return $criteria;
     }
