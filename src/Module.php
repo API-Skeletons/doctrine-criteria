@@ -4,7 +4,6 @@ namespace ZF\Doctrine\Criteria;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
-use Zend\ModuleManager\Listener\ServiceListener;
 use Zend\ModuleManager\ModuleManagerInterface;
 
 class Module implements
