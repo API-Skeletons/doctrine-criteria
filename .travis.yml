@@ -37,3 +37,6 @@ script:
   - if [[ EXECUTE_COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ; fi
   - if [[ EXECUTE_COVERAGE != 'true' ]]; then ./vendor/bin/phpunit ; fi
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs; fi
+
+after_script:
+  - php vendor/bin/coveralls
