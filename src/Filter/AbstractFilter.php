@@ -41,7 +41,7 @@ abstract class AbstractFilter implements FilterInterface
                 break;
             case 'integer':
             case 'smallint':
-            #case 'bigint':  // Don't try to manipulate bigints?
+            case 'bigint':
                 settype($value, 'integer');
                 break;
             case 'boolean':

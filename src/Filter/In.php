@@ -14,17 +14,12 @@ class In extends AbstractFilter
             } elseif ($option['where'] === 'or') {
                 $queryType = 'orWhere';
             }
-        }
-
-        if (! isset($queryType)) {
+        } else {
             $queryType = 'andWhere';
         }
 
-        if (! isset($option['alias'])) {
-            $option['alias'] = 'row';
-        }
 
-        $format = isset($option['format']) ? $option['format'] : null;
+        $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
 
         $queryValues = [];
         foreach ($option['values'] as $value) {
@@ -37,12 +32,6 @@ class In extends AbstractFilter
             );
         }
 
-        $parameter = uniqid('a');
-        $criteria->$queryType(
-            $criteria
-                ->expr()
-                ->in($option['alias'] . '.' . $option['field'], ':' . $parameter)
-        );
-        $criteria->setParameter($parameter, $queryValues);
+        $criteria->$queryType($criteria->expr()->in($option['field'], $queryValues));
     }
 }

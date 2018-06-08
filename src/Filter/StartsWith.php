@@ -4,7 +4,7 @@ namespace ZF\Doctrine\Criteria\Filter;
 
 use Doctrine\Common\Collections\Criteria;
 
-class IsNull extends AbstractFilter
+class StartsWith extends AbstractFilter
 {
     public function filter(Criteria $criteria, $metadata, $option)
     {
@@ -14,20 +14,13 @@ class IsNull extends AbstractFilter
             } elseif ($option['where'] === 'or') {
                 $queryType = 'orWhere';
             }
-        }
-
-        if (! isset($queryType)) {
+        } else {
             $queryType = 'andWhere';
         }
 
-        if (! isset($option['alias'])) {
-            $option['alias'] = 'row';
-        }
+        $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
+        $value = $this->typeCastField($metadata, $option['field'], $option['value'], $format);
 
-        $criteria->$queryType(
-            $criteria
-                ->expr()
-                ->isNull($option['alias'] . '.' . $option['field'])
-        );
+        $criteria->$queryType($criteria->expr()->startsWith($option['field'], $value));
     }
 }

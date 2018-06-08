@@ -14,26 +14,13 @@ class NotEquals extends AbstractFilter
             } elseif ($option['where'] === 'or') {
                 $queryType = 'orWhere';
             }
-        }
-
-        if (! isset($queryType)) {
+        } else {
             $queryType = 'andWhere';
         }
 
-        if (! isset($option['alias'])) {
-            $option['alias'] = 'row';
-        }
-
-        $format = isset($option['format']) ? $option['format'] : null;
-
+        $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
         $value = $this->typeCastField($metadata, $option['field'], $option['value'], $format);
 
-        $parameter = uniqid('a');
-        $criteria->$queryType(
-            $criteria
-                ->expr()
-                ->neq($option['alias'] . '.' . $option['field'], ':' . $parameter)
-        );
-        $criteria->setParameter($parameter, $value);
+        $criteria->$queryType($criteria->expr()->neq($option['field'], $value));
     }
 }

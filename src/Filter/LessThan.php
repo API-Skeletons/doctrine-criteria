@@ -14,29 +14,13 @@ class LessThan extends AbstractFilter
             } elseif ($option['where'] === 'or') {
                 $queryType = 'orWhere';
             }
-        }
-
-        if (! isset($queryType)) {
+        } else {
             $queryType = 'andWhere';
         }
 
-        if (! isset($option['alias'])) {
-            $option['alias'] = 'row';
-        }
-
-        $format = null;
-        if (isset($option['format'])) {
-            $format = $option['format'];
-        }
-
+        $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
         $value = $this->typeCastField($metadata, $option['field'], $option['value'], $format);
 
-        $parameter = uniqid('a');
-        $criteria->$queryType(
-            $criteria
-                ->expr()
-                ->lt($option['alias'] . '.' . $option['field'], ":$parameter")
-        );
-        $criteria->setParameter($parameter, $value);
+        $criteria->$queryType($criteria->expr()->lt($option['field'], $value));
     }
 }

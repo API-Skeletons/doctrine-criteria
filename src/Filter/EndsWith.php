@@ -4,7 +4,7 @@ namespace ZF\Doctrine\Criteria\Filter;
 
 use Doctrine\Common\Collections\Criteria;
 
-class NotIn extends AbstractFilter
+class EndsWith extends AbstractFilter
 {
     public function filter(Criteria $criteria, $metadata, $option)
     {
@@ -19,18 +19,8 @@ class NotIn extends AbstractFilter
         }
 
         $format = $option['format'] ?? 'Y-m-d\TH:i:sP';
+        $value = $this->typeCastField($metadata, $option['field'], $option['value'], $format);
 
-        $queryValues = [];
-        foreach ($option['values'] as $value) {
-            $queryValues[] = $this->typeCastField(
-                $metadata,
-                $option['field'],
-                $value,
-                $format,
-                $doNotTypecastDatetime = true
-            );
-        }
-
-        $criteria->$queryType($criteria->expr()->notIn($option['field'], $values));
+        $criteria->$queryType($criteria->expr()->endsWith($option['field'], $value));
     }
 }
