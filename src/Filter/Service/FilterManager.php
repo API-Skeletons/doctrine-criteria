@@ -36,6 +36,7 @@ class FilterManager extends AbstractPluginManager
      * @param mixed $instance
      * @return void
      * @throws Exception\InvalidServiceException
+     * @codeCoverageIgnore
      */
     public function validate($instance)
     {
@@ -57,6 +58,7 @@ class FilterManager extends AbstractPluginManager
      * @param mixed $instance
      * @return void
      * @throws Exception\InvalidArgumentException
+     * @codeCoverageIgnore
      */
     public function validatePlugin($instance)
     {

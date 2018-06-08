@@ -52,6 +52,7 @@ abstract class AbstractFilter implements FilterInterface
             case 'float':
                 settype($value, 'float');
                 break;
+            // @codeCoverageIgnoreStart
             case 'date':
                 // For dates set time to midnight
                 if ($value && ! $doNotTypecastDatetime) {
@@ -86,6 +87,7 @@ abstract class AbstractFilter implements FilterInterface
                 break;
             default:
                 break;
+            // @codeCoverageIgnoreEnd
         }
 
         return $value;
