@@ -3,6 +3,7 @@ ZF Doctrine Criteria
 
 [![Build Status](https://travis-ci.org/api-skeletons/zf-doctrine-criteria.svg?branch=master)](https://travis-ci.org/api-skeletons/zf-doctrine-criteria)
 [![Coverage Status](https://coveralls.io/repos/github/api-skeletons/zf-doctrine-criteria/badge.svg?branch=master)](https://coveralls.io/github/api-skeletons/zf-doctrine-criteria?branch=master)
+[![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
 [![Total Downloads](https://poser.pugx.org/api-skeletons/zf-doctrine-criteria/downloads)](https://packagist.org/packages/api-skeletons/zf-doctrine-criteria)
 
 This library builds a Criteria object from array parameters for use in filtering collections.
@@ -33,7 +34,7 @@ Configuring the Module
 Copy `config/zf-doctrine-criteria.global.php.dist` to `config/autoload/zf-doctrine-criteria.global.php`
 and edit the list of aliases for those you want enabled.  By default all supported expressions are enabled.
 
-> Note AND and OR composite expressions are not supported yet.  Order By is not supported yet.
+> Note AND and OR composite expressions are not supported yet.
 
 
 Use
@@ -56,13 +57,28 @@ $filterArray = [
     ],
 ];
 
+$orderByArray = [
+    [
+        'type' => 'field',
+        'field' => 'name',
+        'direction' => 'asc',
+    ]
+];
+
 $criteriaBuilder = $container->get(CriteriaBuilder::class);
 $entityClassName = ClassUtils::getRealClass(get_class($collection->first()));
 $metadata = $objectManager->getClassMetadata($entityClassName);
-$criteria = $criteriaBuilder->create($metadata, $filterArray, []);
+$criteria = $criteriaBuilder->create($metadata, $filterArray, $orderByArray);
 
 $filteredCollection = $collection->matching($criteria);
 ```
+
+
+NOTICE
+------
+
+Doctrine Collections does not currently support DateTime comparisons so any DateTime values sent through these filters
+will not work correctly.
 
 
 Filters
@@ -173,3 +189,12 @@ NotIn:
 ['type' => 'notin', 'field' => 'fieldName', 'values' => [1, 2, 3]]
 ```
 
+
+OrderBy
+-------
+
+Field:
+
+```php
+['type' => 'field', 'field' => 'fieldName', 'direction' => 'desc']
+```
