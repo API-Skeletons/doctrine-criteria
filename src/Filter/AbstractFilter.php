@@ -4,12 +4,13 @@ namespace ZF\Doctrine\Criteria\Filter;
 
 use DateTime;
 use DateTimeZone;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
 use ZF\Doctrine\Criteria\Filter\Service\FilterManager;
 
 abstract class AbstractFilter implements FilterInterface
 {
-    abstract public function filter(Criteria $criteria, $metadata, $option);
+    abstract public function filter(Criteria $criteria, ClassMetadata $metadata, array $option);
 
     protected $filterManager;
 

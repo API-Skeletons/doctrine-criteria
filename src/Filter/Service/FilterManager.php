@@ -5,6 +5,7 @@ namespace ZF\Doctrine\Criteria\Filter\Service;
 use RuntimeException;
 use Zend\ServiceManager\AbstractPluginManager;
 use Zend\ServiceManager\Exception;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
 use ZF\Doctrine\Criteria\Filter\FilterInterface;
 
@@ -15,7 +16,7 @@ class FilterManager extends AbstractPluginManager
      */
     protected $instanceOf = FilterInterface::class;
 
-    public function filter(Criteria $criteria, $metadata, $filters)
+    public function filter(Criteria $criteria, ClassMetadata $metadata, array $filters)
     {
         foreach ($filters as $option) {
             if (empty($option['type'])) {

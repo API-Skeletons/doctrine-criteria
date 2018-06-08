@@ -3,10 +3,11 @@
 namespace ZF\Doctrine\Criteria\Filter;
 
 use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\Mapping\ClassMetadata;
 
 class Equals extends AbstractFilter
 {
-    public function filter(Criteria $criteria, $metadata, $option)
+    public function filter(Criteria $criteria, ClassMetadata $metadata, array $option)
     {
         if (isset($option['where'])) {
             if ($option['where'] === 'and') {

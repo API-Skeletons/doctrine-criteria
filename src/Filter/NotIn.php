@@ -2,11 +2,12 @@
 
 namespace ZF\Doctrine\Criteria\Filter;
 
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
 
 class NotIn extends AbstractFilter
 {
-    public function filter(Criteria $criteria, $metadata, $option)
+    public function filter(Criteria $criteria, ClassMetadata $metadata, array $option)
     {
         if (isset($option['where'])) {
             if ($option['where'] === 'and') {
@@ -31,6 +32,6 @@ class NotIn extends AbstractFilter
             );
         }
 
-        $criteria->$queryType($criteria->expr()->notIn($option['field'], $values));
+        $criteria->$queryType($criteria->expr()->notIn($option['field'], $queryValues));
     }
 }

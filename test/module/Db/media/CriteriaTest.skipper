@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<skipper version="3.2.12.1400" mvc="Without MVC" orm="Doctrine2" name="CriteriaTest" uuid="e0ca5732-6c27-4551-b885-aecf37aadb82">
+  <module name="\Test" local-name="Test" namespace="\DbTest\Entity" local-namespace="DbTest\Entity" export-format="Doctrine2Xml" export-path="../config/orm" uuid="027de0e7-25d2-4e9a-b268-8232dc53c11c">
+    <entity name="\DbTest\Entity\Test" local-name="Test" namespace="\DbTest\Entity" uuid="88126e80-1676-41bb-8de4-e4110c039a05">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="a6d2eda1-3f7b-49a0-bd7a-3076c801a111"/>
+      <field name="testString" type="string" uuid="6b9ee37d-fd3d-4eec-830f-49a8fc04a555"/>
+      <field name="testInteger" type="integer" uuid="431a864e-cada-4a7d-bea1-be7cb5b3d310"/>
+      <field name="testBigint" type="bigint" uuid="f03b5e2b-c03a-47b4-b4f9-71dea0999b7f"/>
+      <field name="testDateTime" type="datetime" uuid="f1823f6d-8a5a-4c85-88ef-7e8a3c313103"/>
+      <field name="testDate" type="date" uuid="13e084cb-f4a1-4d6a-b843-cdb624e26f44"/>
+      <field name="testDecimal" type="decimal" uuid="4c5f7b0d-173c-4654-8543-414a69770058"/>
+      <field name="testFloat" type="float" uuid="a7bbf4b2-daa2-49dc-9191-6b2902538285"/>
+      <field name="testBoolean" type="boolean" uuid="6c3cd0fb-b1f5-44d0-80ff-e0130ee5dbd5"/>
+      <field name="testArray" type="array" uuid="1d3469d7-3e8e-4079-853f-4a5a01d4f1bd"/>
+    </entity>
+  </module>
+  <visual-data>
+    <entity uuid="88126e80-1676-41bb-8de4-e4110c039a05" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="10" position-y="20"/>
+    <module uuid="027de0e7-25d2-4e9a-b268-8232dc53c11c" bg-color="#FEEFE3" position-x="61" position-y="72" size-x="11" size-x2="180" size-y="22" size-y2="249"/>
+    <project uuid="e0ca5732-6c27-4551-b885-aecf37aadb82" size-x="0" size-x2="291" size-y="0" size-y2="371"/>
+  </visual-data>
+</skipper>

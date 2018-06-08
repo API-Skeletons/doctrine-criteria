@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DbTest\Entity\Test">
+    <id name="id" type="integer">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="testString" type="string" nullable="true"/>
+    <field name="testInteger" type="integer" nullable="true"/>
+    <field name="testBigint" type="bigint" nullable="true"/>
+    <field name="testDateTime" type="datetime" nullable="true"/>
+    <field name="testDate" type="date" nullable="true"/>
+    <field name="testDecimal" type="decimal" nullable="true"/>
+    <field name="testFloat" type="float" nullable="true"/>
+    <field name="testBoolean" type="boolean" nullable="true"/>
+    <field name="testArray" type="array" nullable="true"/>
+  </entity>
+</doctrine-mapping>
