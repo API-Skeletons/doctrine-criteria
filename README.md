@@ -19,7 +19,7 @@ $ composer require api-skeletons/zf-doctrine-criteria
 ```
 
 Once installed, add `ZF\Doctrine\Criteria` to your list of modules inside
-`config/application.config.php`.
+`config/application.config.php` or `config/modules.config.php`.
 
 > ### zf-component-installer
 >
@@ -59,7 +59,7 @@ $filterArray = [
 $orderByArray = [
     [
         'type' => 'field',
-        'field' => 'name',
+        'field' => 'venue',
         'direction' => 'asc',
     ]
 ];
@@ -71,13 +71,6 @@ $criteria = $criteriaBuilder->create($metadata, $filterArray, $orderByArray);
 
 $filteredCollection = $collection->matching($criteria);
 ```
-
-
-NOTICE
-------
-
-Doctrine Collections does not currently support DateTime comparisons so any DateTime values sent through these filters
-will not work correctly.
 
 
 Filters
@@ -115,6 +108,11 @@ Included Filter Types
 
 Equals:
 
+> Doctrine Collections does not currently support DateTime `Equals` comparisons.
+> Any DateTime values sent through the `equals` filter will always return not equals.
+> This is a shortcoming of [doctrine/collections](https://github.com/doctrine/collections)
+> and not this module.  Other comparison operators should work as expected.
+
 ```php
 ['type' => 'eq', 'field' => 'fieldName', 'value' => 'matchValue']
 ```
@@ -151,14 +149,11 @@ Greater Than or Equals:
 
 Contains:
 
+> Used to search inside of a string.  Comlimentary with Starts With & Ends With,
+> contains matches a string inside any part of the value.
+
 ```php
 ['type' => 'contains', 'field' => 'fieldName', 'value' => 'matchValue']
-```
-
-Member Of:
-
-```php
-['type' => 'memeberof', 'field' => 'fieldName', 'value' => 'matchValue']
 ```
 
 Starts With:
@@ -173,16 +168,27 @@ Ends With:
 ['type' => 'endswith', 'field' => 'fieldName', 'value' => 'matchValue']
 ```
 
-> Note: Dates in the In and NotIn filters are not handled as dates.
-> It is recommended you use other filters instead of these filters for date datatypes.
+Member Of:
+
+> Used to search inside an array field to match the matchValue to an array element.
+
+```php
+['type' => 'memeberof', 'field' => 'fieldName', 'value' => 'matchValue']
+```
 
 In:
+
+> Note: Dates in the In and NotIn filters are not handled as dates.
+> It is recommended you use other filters instead of these filters for date datatypes.
 
 ```php
 ['type' => 'in', 'field' => 'fieldName', 'values' => [1, 2, 3]]
 ```
 
 NotIn:
+
+> Note: Dates in the In and NotIn filters are not handled as dates.
+> It is recommended you use other filters instead of these filters for date datatypes.
 
 ```php
 ['type' => 'notin', 'field' => 'fieldName', 'values' => [1, 2, 3]]
