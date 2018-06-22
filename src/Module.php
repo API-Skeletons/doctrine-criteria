@@ -2,9 +2,11 @@
 
 namespace ZF\Doctrine\Criteria;
 
+use Exception;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\ModuleManager\ModuleManager;
 
 class Module implements
     ConfigProviderInterface,
@@ -21,6 +23,10 @@ class Module implements
 
     public function init(ModuleManagerInterface $manager)
     {
+        if (! $manager instanceof ModuleManager) {
+            throw new Exception('Invalid ModuleManager');
+        }
+
         $serviceManager  = $manager->getEvent()->getParam('ServiceManager');
         $serviceListener = $serviceManager->get('ServiceListener');
 
