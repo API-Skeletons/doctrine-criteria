@@ -9,6 +9,9 @@ use ZF\Doctrine\Criteria\OrderBy\Service\OrderByManager;
 
 class Builder
 {
+    private $filterManager;
+    private $orderByManager;
+
     public function __construct(FilterManager $filterManager, OrderByManager $orderByManager)
     {
         $this->filterManager = $filterManager;
