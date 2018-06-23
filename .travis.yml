@@ -19,15 +19,12 @@ matrix:
     - php: 7.1
       env:
         - DEPS=latest
-        - EXECUTE_CS_CHECK=true
-        - EXECUTE_COVERAGE=true
     - php: 7.2
     - php: nightly
   allow_failures:
     - php: nightly
 
 before_install:
-  - if [[ $EXECUTE_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
 
 install:
@@ -38,9 +35,8 @@ install:
 
 script:
   - mkdir -p build/logs
-  - if [[ EXECUTE_COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ; fi
-  - if [[ EXECUTE_COVERAGE != 'true' ]]; then ./vendor/bin/phpunit ; fi
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs; fi
+  - ./vendor/bin/phpcs
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
   - ./vendor/bin/phpstan analyze -c phpstan.neon --level=7 src/
 
 after_success:
