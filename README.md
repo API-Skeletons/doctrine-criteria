@@ -4,6 +4,7 @@ ZF Doctrine Criteria
 [![Build Status](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria.svg?branch=master)](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria)
 [![Coverage](https://coveralls.io/repos/github/API-Skeletons/zf-doctrine-criteria/badge.svg?branch=master&123)](https://coveralls.io/repos/github/API-Skeletons/zf-doctrine-criteria/badge.svg?branch=master&123)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
+[![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/apiskeletons)
 [![Total Downloads](https://poser.pugx.org/api-skeletons/zf-doctrine-criteria/downloads)](https://packagist.org/packages/api-skeletons/zf-doctrine-criteria)
 
 This library builds a Criteria object from array parameters for use in filtering collections.
