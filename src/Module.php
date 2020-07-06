@@ -32,16 +32,16 @@ class Module implements
 
         $serviceListener->addServiceManager(
             Filter\Service\FilterManager::class,
-            'doctrine-criteria-filter',
+            'apiskeletons-doctrine-criteria-filter',
             Filter\FilterInterface::class,
-            'getDoctrineCriteriaFilterConfig'
+            'getApiSkeletonsDoctrineCriteriaFilterConfig'
         );
 
         $serviceListener->addServiceManager(
             OrderBy\Service\OrderByManager::class,
-            'doctrine-criteria-orderby',
+            'apiskeletons-doctrine-criteria-orderby',
             OrderBy\OrderByInterface::class,
-            'getDoctrineCritieraOrderByConfig'
+            'getApiSkeletonsDoctrineCritieraOrderByConfig'
         );
     }
 }
