@@ -1,5 +1,5 @@
-ZF Doctrine Criteria
-====================
+Doctrine Criteria for Laminas
+=============================
 
 [![Build Status](https://travis-ci.org/API-Skeletons/doctrine-criteria.svg?branch=master)](https://travis-ci.org/API-Skeletons/doctrine-criteria)
 [![Coverage](https://coveralls.io/repos/github/API-Skeletons/doctrine-criteria/badge.svg?branch=master&123)](https://coveralls.io/repos/github/API-Skeletons/doctrine-criteria/badge.svg?branch=master&123)
