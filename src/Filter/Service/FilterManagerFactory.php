@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\Filter\Service;
+namespace ApiSkeletons\Doctrine\Criteria\Filter\Service;
 
 use Laminas\Mvc\Service\AbstractPluginManagerFactory;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\OrderBy\Service;
+namespace ApiSkeletons\Doctrine\Criteria\OrderBy\Service;
 
 use Laminas\Mvc\Service\AbstractPluginManagerFactory;
 

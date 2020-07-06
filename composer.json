@@ -16,7 +16,7 @@
     "extra": {
         "zf": {
             "module": [
-                "ZF\\Doctrine\\Criteria"
+                "ApiSkeletons\\Doctrine\\Criteria"
             ]
         }
     },
@@ -39,12 +39,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ZF\\Doctrine\\Criteria\\": "src/"
+            "ApiSkeletons\\Doctrine\\Criteria\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZFTest\\Doctrine\\Criteria\\": "test/",
+            "ApiSkeletonsTest\\Doctrine\\Criteria\\": "test/",
             "DbTest\\": "test/module/DbTest/src/"
         }
     },

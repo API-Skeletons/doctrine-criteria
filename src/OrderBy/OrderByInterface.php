@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\OrderBy;
+namespace ApiSkeletons\Doctrine\Criteria\OrderBy;
 
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;

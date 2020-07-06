@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\OrderBy;
+namespace ApiSkeletons\Doctrine\Criteria\OrderBy;
 
 use RuntimeException;
 use Doctrine\ORM\Mapping\ClassMetadata;

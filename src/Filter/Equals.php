@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\Filter;
+namespace ApiSkeletons\Doctrine\Criteria\Filter;
 
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping\ClassMetadata;

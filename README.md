@@ -20,7 +20,7 @@ Installation of this module uses composer. For composer documentation, please re
 $ composer require api-skeletons/doctrine-criteria
 ```
 
-Once installed, add `ZF\Doctrine\Criteria` to your list of modules inside
+Once installed, add `ApiSkeletons\Doctrine\Criteria` to your list of modules inside
 `config/application.config.php` or `config/modules.config.php`.
 
 > ### laminas-component-installer
@@ -43,7 +43,7 @@ Use
 
 ```php
 use Doctrine\Common\Util\ClassUtils;
-use ZF\Doctrine\Criteria\Builder as CriteriaBuilder;
+use ApiSkeletons\Doctrine\Criteria\Builder as CriteriaBuilder;
 
 $filterArray = [
     [

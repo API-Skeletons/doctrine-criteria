@@ -1,11 +1,11 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\OrderBy;
+namespace ApiSkeletons\Doctrine\Criteria\OrderBy;
 
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
-use ZF\Doctrine\Criteria\OrderBy\OrderByInterface;
-use ZF\Doctrine\Criteria\OrderBy\Service\OrderByManager;
+use ApiSkeletons\Doctrine\Criteria\OrderBy\OrderByInterface;
+use ApiSkeletons\Doctrine\Criteria\OrderBy\Service\OrderByManager;
 
 abstract class AbstractOrderBy implements OrderByInterface
 {

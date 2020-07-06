@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria;
+namespace ApiSkeletons\Doctrine\Criteria;
 
 class ConfigProvider
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace ZFTest\Doctrine\Criteria;
+namespace ApiSkeletonsTest\Doctrine\Criteria;
 
 use Doctrine\Common\Criteria\ArrayCollection;
 use Doctrine\Common\Util\ClassUtils;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use ZF\Doctrine\Criteria\Builder;
+use ApiSkeletons\Doctrine\Criteria\Builder;
 use DbTest\Entity\Test;
-use ZF\Doctrine\Criteria\OrderBy\Service\OrderByManager;
+use ApiSkeletons\Doctrine\Criteria\OrderBy\Service\OrderByManager;
 use DateTime;
 
 class OrderByManagerTest extends AbstractTest

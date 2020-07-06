@@ -1,10 +1,10 @@
 <?php
 
-namespace ZF\Doctrine\Criteria;
+namespace ApiSkeletons\Doctrine\Criteria;
 
 use Interop\Container\ContainerInterface;
-use ZF\Doctrine\Criteria\Filter\Service\FilterManager;
-use ZF\Doctrine\Criteria\OrderBy\Service\OrderByManager;
+use ApiSkeletons\Doctrine\Criteria\Filter\Service\FilterManager;
+use ApiSkeletons\Doctrine\Criteria\OrderBy\Service\OrderByManager;
 
 class BuilderFactory
 {

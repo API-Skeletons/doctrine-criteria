@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\Filter;
+namespace ApiSkeletons\Doctrine\Criteria\Filter;
 
 use DateTime;
 use DateTimeZone;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
-use ZF\Doctrine\Criteria\Filter\Service\FilterManager;
+use ApiSkeletons\Doctrine\Criteria\Filter\Service\FilterManager;
 
 abstract class AbstractFilter implements FilterInterface
 {

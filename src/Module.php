@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\Doctrine\Criteria;
+namespace ApiSkeletons\Doctrine\Criteria;
 
 use Exception;
 use Laminas\ModuleManager\Feature\ConfigProviderInterface;

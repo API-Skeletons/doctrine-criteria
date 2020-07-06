@@ -1,13 +1,13 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\OrderBy\Service;
+namespace ApiSkeletons\Doctrine\Criteria\OrderBy\Service;
 
 use RuntimeException;
 use Laminas\ServiceManager\AbstractPluginManager;
 use Laminas\ServiceManager\Exception;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use ZF\Doctrine\Criteria\OrderBy\OrderByInterface;
+use ApiSkeletons\Doctrine\Criteria\OrderBy\OrderByInterface;
 
 class OrderByManager extends AbstractPluginManager
 {

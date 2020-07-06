@@ -1,13 +1,13 @@
 <?php
 
-namespace ZF\Doctrine\Criteria\Filter\Service;
+namespace ApiSkeletons\Doctrine\Criteria\Filter\Service;
 
 use RuntimeException;
 use Laminas\ServiceManager\AbstractPluginManager;
 use Laminas\ServiceManager\Exception;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
-use ZF\Doctrine\Criteria\Filter\FilterInterface;
+use ApiSkeletons\Doctrine\Criteria\Filter\FilterInterface;
 
 class FilterManager extends AbstractPluginManager
 {

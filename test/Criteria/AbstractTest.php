@@ -1,6 +1,6 @@
 <?php
 
-namespace ZFTest\Doctrine\Criteria;
+namespace ApiSkeletonsTest\Doctrine\Criteria;
 
 use Datetime;
 use Doctrine\Common\Collections\ArrayCollection;

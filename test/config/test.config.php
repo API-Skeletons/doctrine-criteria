@@ -4,7 +4,7 @@ $modules = [
     'Laminas\Router',
     'DoctrineModule',
     'DoctrineORMModule',
-    'ZF\Doctrine\Criteria',
+    'ApiSkeletons\Doctrine\Criteria',
     'DbTest',
 ];
 
