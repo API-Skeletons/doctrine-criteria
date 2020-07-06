@@ -3,8 +3,8 @@
 namespace ZF\Doctrine\Criteria\Filter\Service;
 
 use RuntimeException;
-use Zend\ServiceManager\AbstractPluginManager;
-use Zend\ServiceManager\Exception;
+use Laminas\ServiceManager\AbstractPluginManager;
+use Laminas\ServiceManager\Exception;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Collections\Criteria;
 use ZF\Doctrine\Criteria\Filter\FilterInterface;

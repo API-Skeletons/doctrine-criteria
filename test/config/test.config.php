@@ -1,7 +1,7 @@
 <?php
 
 $modules = [
-    'Zend\Router',
+    'Laminas\Router',
     'DoctrineModule',
     'DoctrineORMModule',
     'ZF\Doctrine\Criteria',

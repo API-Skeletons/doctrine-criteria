@@ -2,7 +2,7 @@
 
 namespace ZF\Doctrine\Criteria\Filter\Service;
 
-use Zend\Mvc\Service\AbstractPluginManagerFactory;
+use Laminas\Mvc\Service\AbstractPluginManagerFactory;
 
 class FilterManagerFactory extends AbstractPluginManagerFactory
 {

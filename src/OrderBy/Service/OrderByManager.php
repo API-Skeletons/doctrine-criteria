@@ -3,8 +3,8 @@
 namespace ZF\Doctrine\Criteria\OrderBy\Service;
 
 use RuntimeException;
-use Zend\ServiceManager\AbstractPluginManager;
-use Zend\ServiceManager\Exception;
+use Laminas\ServiceManager\AbstractPluginManager;
+use Laminas\ServiceManager\Exception;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use ZF\Doctrine\Criteria\OrderBy\OrderByInterface;

@@ -1,11 +1,11 @@
 ZF Doctrine Criteria
 ====================
 
-[![Build Status](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria.svg?branch=master)](https://travis-ci.org/API-Skeletons/zf-doctrine-criteria)
-[![Coverage](https://coveralls.io/repos/github/API-Skeletons/zf-doctrine-criteria/badge.svg?branch=master&123)](https://coveralls.io/repos/github/API-Skeletons/zf-doctrine-criteria/badge.svg?branch=master&123)
+[![Build Status](https://travis-ci.org/API-Skeletons/doctrine-criteria.svg?branch=master)](https://travis-ci.org/API-Skeletons/doctrine-criteria)
+[![Coverage](https://coveralls.io/repos/github/API-Skeletons/doctrine-criteria/badge.svg?branch=master&123)](https://coveralls.io/repos/github/API-Skeletons/doctrine-criteria/badge.svg?branch=master&123)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
 [![Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/apiskeletons)
-[![Total Downloads](https://poser.pugx.org/api-skeletons/zf-doctrine-criteria/downloads)](https://packagist.org/packages/api-skeletons/zf-doctrine-criteria)
+[![Total Downloads](https://poser.pugx.org/api-skeletons/doctrine-criteria/downloads)](https://packagist.org/packages/api-skeletons/doctrine-criteria)
 
 This library builds a Criteria object from array parameters for use in filtering collections.
 
@@ -17,22 +17,22 @@ Installation of this module uses composer. For composer documentation, please re
 [getcomposer.org](http://getcomposer.org/).
 
 ```bash
-$ composer require api-skeletons/zf-doctrine-criteria
+$ composer require api-skeletons/doctrine-criteria
 ```
 
 Once installed, add `ZF\Doctrine\Criteria` to your list of modules inside
 `config/application.config.php` or `config/modules.config.php`.
 
-> ### zf-component-installer
+> ### laminas-component-installer
 >
-> If you use [zf-component-installer](https://github.com/zendframework/zf-component-installer),
-> that plugin will install zf-doctrine-criteria as a module for you.
+> If you use [laminas-component-installer](https://github.com/laminas/laminas-component-installer),
+> that plugin will install doctrine-criteria as a module for you.
 
 
 Configuring the Module
 ----------------------
 
-Copy `config/zf-doctrine-criteria.global.php.dist` to `config/autoload/zf-doctrine-criteria.global.php`
+Copy `config/doctrine-criteria.global.php.dist` to `config/autoload/doctrine-criteria.global.php`
 and edit the list of aliases for those you want enabled.  By default all supported expressions are enabled.
 
 > Note AND and OR composite expressions are not supported yet.

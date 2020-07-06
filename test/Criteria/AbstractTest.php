@@ -6,7 +6,7 @@ use Datetime;
 use Doctrine\Common\Collections\ArrayCollection;
 use DbTest\Entity\Test;
 
-abstract class AbstractTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
+abstract class AbstractTest extends \Laminas\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
 {
     protected function provideCollection()
     {

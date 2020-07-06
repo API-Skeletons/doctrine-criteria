@@ -6,7 +6,8 @@
         "doctrine",
         "filter",
         "criteria",
-        "orm"
+        "orm",
+        "laminas"
     ],
     "homepage": "https://api-skeletons.com",
     "support": {
@@ -21,19 +22,20 @@
     },
     "require": {
         "php": "^7.1",
+        "doctrine/collections": "^1.5",
         "doctrine/doctrine-module": "^1.2 || ^2.1",
         "doctrine/doctrine-orm-module": "^1.1 || ^2.1",
-        "zendframework/zend-modulemanager": "^2.7.2",
-        "zendframework/zend-servicemanager": "^2.7.6 || ^3.1.1",
-        "doctrine/collections": "^1.5"
+        "laminas/laminas-modulemanager": "^2.7.2",
+        "laminas/laminas-servicemanager": "^2.7.6 || ^3.1.1",
+        "laminas/laminas-dependency-plugin": "^1.0"
     },
     "require-dev": {
-        "dprevite/lint": "dev-master",
         "api-skeletons/coding-standard": "^1.0",
+        "dprevite/lint": "dev-master",
+        "laminas/laminas-test": "^3.2",
         "phpunit/phpunit": "^7.1",
-        "zendframework/zend-test": "^3.2",
-        "php-coveralls/php-coveralls": "^2.1",
-        "phpstan/phpstan-doctrine": "^0.9.1"
+        "phpstan/phpstan-doctrine": "^0.9.1",
+        "php-coveralls/php-coveralls": "^2.1"
     },
     "autoload": {
         "psr-4": {

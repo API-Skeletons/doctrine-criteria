@@ -2,7 +2,7 @@
 
 namespace ZF\Doctrine\Criteria\OrderBy\Service;
 
-use Zend\Mvc\Service\AbstractPluginManagerFactory;
+use Laminas\Mvc\Service\AbstractPluginManagerFactory;
 
 class OrderByManagerFactory extends AbstractPluginManagerFactory
 {

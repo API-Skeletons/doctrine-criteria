@@ -3,10 +3,10 @@
 namespace ZF\Doctrine\Criteria;
 
 use Exception;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\ModuleManager\Feature\InitProviderInterface;
-use Zend\ModuleManager\ModuleManagerInterface;
-use Zend\ModuleManager\ModuleManager;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\ModuleManager\Feature\InitProviderInterface;
+use Laminas\ModuleManager\ModuleManagerInterface;
+use Laminas\ModuleManager\ModuleManager;
 
 class Module implements
     ConfigProviderInterface,
@@ -32,14 +32,14 @@ class Module implements
 
         $serviceListener->addServiceManager(
             Filter\Service\FilterManager::class,
-            'zf-doctrine-criteria-filter',
+            'doctrine-criteria-filter',
             Filter\FilterInterface::class,
             'getDoctrineCriteriaFilterConfig'
         );
 
         $serviceListener->addServiceManager(
             OrderBy\Service\OrderByManager::class,
-            'zf-doctrine-criteria-orderby',
+            'doctrine-criteria-orderby',
             OrderBy\OrderByInterface::class,
             'getDoctrineCritieraOrderByConfig'
         );
