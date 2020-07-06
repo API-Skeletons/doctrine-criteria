@@ -1,5 +1,5 @@
 {
-    "name": "api-skeletons/zf-doctrine-criteria",
+    "name": "api-skeletons/doctrine-criteria",
     "description": "Doctrine Criteria from Array Parameters",
     "license": "BSD-3-Clause",
     "keywords": [
