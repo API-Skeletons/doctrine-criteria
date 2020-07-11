@@ -32,7 +32,7 @@ Once installed, add `ApiSkeletons\Doctrine\Criteria` to your list of modules ins
 Configuring the Module
 ----------------------
 
-Copy `config/doctrine-criteria.global.php.dist` to `config/autoload/doctrine-criteria.global.php`
+Copy `config/apiskeletons-doctrine-criteria.global.php.dist` to `config/autoload/apiskeletons-doctrine-criteria.global.php`
 and edit the list of aliases for those you want enabled.  By default all supported expressions are enabled.
 
 > Note AND and OR composite expressions are not supported yet.
