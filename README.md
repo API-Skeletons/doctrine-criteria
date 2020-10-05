@@ -196,6 +196,14 @@ NotIn:
 ['type' => 'notin', 'field' => 'fieldName', 'values' => [1, 2, 3]]
 ```
 
+IsNull:
+
+> Used to determine if the field is null.  There is no corresponding IsNotNull.
+
+```php
+['type' => 'isnull', 'field' => 'fieldName']
+```
+
 
 OrderBy
 -------
