@@ -1139,6 +1139,30 @@ class FilterTest extends AbstractTest
         $this->assertEquals(5, $filteredCollection->count());
     }
 
+    public function testIsNull()
+    {
+        $container = $this->getApplication()->getServiceManager();
+        $builder = $container->get(Builder::class);
+        $objectManager = $container->get('doctrine.entitymanager.orm_default');
+        $collection = $this->provideNullCollection();
+
+        $filterArray = [
+            [
+                'type' => 'isnull',
+                'field' => 'testString',
+            ],
+        ];
+
+        $builder = $container->get(Builder::class);
+        $entityClassName = ClassUtils::getRealClass(get_class($collection->first()));
+        $metadata = $objectManager->getClassMetadata($entityClassName);
+        $criteria = $builder->create($metadata, $filterArray, []);
+
+        $filteredCollection = $collection->matching($criteria);
+
+        $this->assertEquals(1, $filteredCollection->count());
+    }
+
 /**
  * Date fields are not handled by Criteria!!!
  *
